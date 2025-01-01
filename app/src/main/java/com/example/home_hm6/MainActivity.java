@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         Random random = new Random();
         int num1 = random.nextInt(10) + 1; // Base (1 to 10 for simplicity)
         int num2 = random.nextInt(4) + 1;  // Exponent (1 to 4 for simplicity)
-        int operator = random.nextInt(5); // Add a fifth operator for power
+        int operator = random.nextInt(7); // Add a seventh operator for power of 2
         String questionText = "";
         String correctAnswer = "";
 
@@ -146,9 +146,18 @@ public class MainActivity extends AppCompatActivity {
                 questionText = num1 + " / " + num2;
                 correctAnswer = String.valueOf(num1 / num2); // Integer division
                 break;
-            case 4: // Power
-                questionText = num1 + " ^ " + num2;
-                correctAnswer = String.valueOf((int) Math.pow(num1, num2)); // Compute power
+            case 4: // Power (num^3)
+                questionText = num1 + " ^ 3";
+                correctAnswer = String.valueOf((int) Math.pow(num1, 3)); // Compute cube
+                break;
+            case 5: // Square Root
+                num1 = random.nextInt(20) + 1; // Random number between 1 and 20
+                questionText = "\u221A" + (num1 * num1); // Square of the number
+                correctAnswer = String.valueOf(num1); // Correct answer is the square root
+                break;
+            case 6: // Power (num^2)
+                questionText = num1 + " ^ 2";
+                correctAnswer = String.valueOf((int) Math.pow(num1, 2)); // Compute square
                 break;
         }
 
